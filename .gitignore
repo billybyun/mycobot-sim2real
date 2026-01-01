@@ -205,3 +205,47 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ----------------------------
+# Robotics / ROS2 / Isaac Sim
+# ----------------------------
+
+# ROS2 build/install/log
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# colcon / ament
+**/build/
+**/install/
+**/log/
+
+# rosbag2 recordings
+**/rosbag2_*/
+**/*.db3
+**/*.mcap
+
+# Isaac / Omniverse caches (can get huge)
+**/.cache/omniverse/
+**/.nvidia-omniverse/
+**/omniverse/
+**/_build/  # sometimes used by Isaac examples
+
+# Gazebo / RViz / general robotics caches
+**/.gazebo/
+**/.ros/
+**/rviz*.rviz
+
+# Large data outputs
+data/**/runs/*
+!data/**/runs/.gitkeep
+data/**/raw/*
+data/**/processed/*
+*.bag
+*.hdf5
+*.h5
+*.npz
+
+# OS junk
+.DS_Store
+Thumbs.db
