@@ -1,0 +1,15 @@
+[project]
+name = "mycobot-sim2real"
+version = "0.0.1"
+description = "Sim-to-real pick-and-place for myCobot 280 Pi (Isaac Sim + ROS2) · VLA-style policy (in progress)"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pyyaml", "opencv-python"]
+
+[project.optional-dependencies]
+dev = ["ruff", "black", "pytest"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
