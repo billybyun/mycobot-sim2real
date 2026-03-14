@@ -24,7 +24,8 @@ def wait_reached(mc, target, timeout_s=10, tol_deg=10, poll_s=0.25):
     last = None
     while time.time() - t0 < timeout_s:
         ang = mc.get_angles()
-        if ang and len(ang) >= 6:
+        # get_angles() can return int (e.g. -1) on comm errors; guard before len()
+        if isinstance(ang, (list, tuple)) and len(ang) >= 6:
             last = ang[:6]
             errs = [deg_abs_diff(last[i], target[i]) for i in range(6)]
             if max(errs) <= tol_deg:
@@ -43,7 +44,7 @@ def main():
     # Warm up comms
     for _ in range(3):
         a = mc.get_angles()
-        if a and len(a) >= 6:
+        if isinstance(a, (list, tuple)) and len(a) >= 6:
             break
         time.sleep(0.2)
 
@@ -52,7 +53,7 @@ def main():
     time.sleep(0.8)
 
     ang0 = mc.get_angles()
-    if not ang0 or len(ang0) < 6:
+    if not isinstance(ang0, (list, tuple)) or len(ang0) < 6:
         print("[FAIL] Could not read angles. Check wiring/power/port.")
         return 2
     print("[INFO] Current angles:", [round(x, 2) for x in ang0[:6]])
