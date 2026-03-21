@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "2026-03-21T21:33:53.551115+00:00",
+  "duration_wall_s": 14.4755,
+  "duration_target_s": 10.0,
+  "depthai_version": "2.32.0.0",
+  "python": "3.10.11",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "device_name": "OAK-D-LITE",
+  "mx_id": "1944301091E86F5A00",
+  "streams": {
+    "rgb": {
+      "frames": 218,
+      "fps": 15.0599,
+      "dt_s_median": 0.033328,
+      "dt_s_min": 0.023802,
+      "dt_s_max": 0.041888
+    },
+    "left": {
+      "frames": 219,
+      "fps": 15.129,
+      "dt_s_median": 0.033277,
+      "dt_s_min": 0.030449,
+      "dt_s_max": 0.037037
+    },
+    "right": {
+      "frames": 219,
+      "fps": 15.129,
+      "dt_s_median": 0.033329,
+      "dt_s_min": 0.030445,
+      "dt_s_max": 0.037066
+    },
+    "depth": {
+      "frames": 219,
+      "fps": 15.129,
+      "dt_s_median": 0.033265,
+      "dt_s_min": 0.007784,
+      "dt_s_max": 0.036883
+    }
+  }
+}
